@@ -1,0 +1,513 @@
+,Spieler,Position,Pkt.,Marktwert
+0,Neuer,Torwart,4,2760000
+1,R. Hoffmann,Torwart,0,160000
+2,Nübel,Torwart,0,730000
+3,Nianzou,Abwehr,0,3440000
+4,Richards,Abwehr,6,2060000
+5,Lucas Hernández,Abwehr,13,4670000
+6,Davies,Abwehr,4,6190000
+7,Pavard,Abwehr,8,5750000
+8,Sarr,Abwehr,0,6500000
+9,J. Boateng,Abwehr,7,4080000
+10,Alaba,Abwehr,4,6860000
+11,Süle,Abwehr,11,4970000
+12,Javi Martínez,Mittelfeld,4,2190000
+13,Tolisso,Mittelfeld,6,3560000
+14,Marc Roca,Mittelfeld,0,11060000
+15,Douglas Costa,Mittelfeld,1,12130000
+16,Kimmich,Mittelfeld,27,12850000
+17,Goretzka,Mittelfeld,20,9850000
+18,Musiala,Mittelfeld,10,3160000
+19,L. Sané,Sturm,14,16860000
+20,Choupo-Moting,Sturm,0,7770000
+21,Zirkzee,Sturm,5,1770000
+22,T. Müller,Sturm,42,13890000
+23,Dajaku,Sturm,0,300000
+24,Lewandowski,Sturm,52,17440000
+25,Gnabry,Sturm,29,12720000
+26,Coman,Sturm,3,6720000
+27,Drljača,Torwart,0,160000
+28,Hitz,Torwart,11,790000
+29,Unbehaun,Torwart,0,160000
+30,Bürki,Torwart,4,2320000
+31,Meunier,Abwehr,11,4600000
+32,Mateu Morey,Abwehr,0,910000
+33,Akanji,Abwehr,8,3310000
+34,Zagadou,Abwehr,0,1780000
+35,Passlack,Abwehr,15,3340000
+36,Hummels,Abwehr,21,6860000
+37,Piszczek,Abwehr,2,2240000
+38,Schmelzer,Abwehr,0,260000
+39,Can,Abwehr,26,7450000
+40,N. Schulz,Abwehr,1,760000
+41,Reinier,Mittelfeld,3,6720000
+42,Bellingham,Mittelfeld,15,12510000
+43,Raschl,Mittelfeld,0,240000
+44,Brandt,Mittelfeld,8,5470000
+45,Witsel,Mittelfeld,16,6610000
+46,Dahoud,Mittelfeld,4,1640000
+47,Raphaël Guerreiro,Mittelfeld,14,7300000
+48,Delaney,Mittelfeld,7,1760000
+49,Haaland,Sturm,38,15000000
+50,Reyna,Sturm,26,9590000
+51,Moukoko,Sturm,0,6490000
+52,Sancho,Sturm,14,14120000
+53,Hazard,Sturm,2,7460000
+54,Reus,Sturm,13,10060000
+55,Tschauner,Torwart,0,240000
+56,T. Schreiber,Torwart,0,160000
+57,Gulácsi,Torwart,13,2980000
+58,Josep Martínez,Torwart,0,180000
+59,Upamecano,Abwehr,17,6150000
+60,Angeliño,Abwehr,32,8060000
+61,Mukiele,Abwehr,11,3960000
+62,Klostermann,Abwehr,6,3740000
+63,Halstenberg,Abwehr,22,6470000
+64,Henrichs,Abwehr,7,2950000
+65,Orban,Abwehr,19,4620000
+66,Konaté,Abwehr,0,2860000
+67,Dani Olmo,Mittelfeld,25,8700000
+68,Samardžić,Mittelfeld,0,1350000
+69,Wosz,Mittelfeld,1,600000
+70,Nkunku,Mittelfeld,15,7790000
+71,Forsberg,Mittelfeld,28,7980000
+72,Haidara,Mittelfeld,17,4660000
+73,T. Adams,Mittelfeld,7,2650000
+74,Laimer,Mittelfeld,0,2360000
+75,Kampl,Mittelfeld,7,4870000
+76,Sabitzer,Mittelfeld,0,7670000
+77,Sørloth,Sturm,2,12310000
+78,Hugo Novoa,Sturm,0,360000
+79,Hwang,Sturm,4,3500000
+80,Borkowski,Sturm,0,280000
+81,Hartmann,Sturm,0,210000
+82,Y. Poulsen,Sturm,18,7710000
+83,Kluivert,Sturm,0,11780000
+84,Grün,Torwart,0,160000
+85,Olschowsky,Torwart,0,160000
+86,Sippel,Torwart,0,210000
+87,Sommer,Torwart,3,2860000
+88,Lang,Abwehr,0,300000
+89,Doucouré,Abwehr,0,280000
+90,Elvedi,Abwehr,10,3640000
+91,A. Poulsen,Abwehr,0,200000
+92,Bensebaini,Abwehr,5,3670000
+93,Lainer,Abwehr,15,3620000
+94,Ginter,Abwehr,16,4520000
+95,Wendt,Abwehr,4,1010000
+96,Jantschke,Abwehr,-1,470000
+97,Kurt,Abwehr,0,340000
+98,Beyer,Abwehr,0,320000
+99,H. Wolf,Mittelfeld,3,2600000
+100,Traoré,Mittelfeld,1,580000
+101,Neuhaus,Mittelfeld,6,4810000
+102,Lazaro,Mittelfeld,0,5220000
+103,Hofmann,Mittelfeld,23,5400000
+104,Kramer,Mittelfeld,16,4330000
+105,Bénes,Mittelfeld,0,1200000
+106,Quizera,Mittelfeld,0,810000
+107,Zakaria,Mittelfeld,0,3530000
+108,Pléa,Sturm,16,8710000
+109,Embolo,Sturm,2,4190000
+110,Thuram,Sturm,10,7540000
+111,Müsel,Sturm,0,190000
+112,P. Herrmann,Sturm,7,2780000
+113,Stindl,Sturm,20,6760000
+114,Villalba,Sturm,0,240000
+115,L. Grill,Torwart,0,220000
+116,Lomb,Torwart,0,160000
+117,Hradecky,Torwart,10,2880000
+118,S. Bender,Abwehr,9,3270000
+119,Tapsoba,Abwehr,19,4810000
+120,Sinkgraven,Abwehr,10,2470000
+121,Dragović,Abwehr,0,330000
+122,Santiago Arias,Abwehr,2,2360000
+123,Jedvaj,Abwehr,0,490000
+124,Wendell ,Abwehr,4,1920000
+125,L. Bender,Abwehr,16,3950000
+126,Tah,Abwehr,3,1920000
+127,M. Weiser,Abwehr,0,860000
+128,Wirtz,Mittelfeld,6,5490000
+129,Palacios,Mittelfeld,2,1550000
+130,Baumgartlinger,Mittelfeld,6,1420000
+131,Charles Aránguiz,Mittelfeld,17,5400000
+132,Paulinho,Mittelfeld,0,780000
+133,Demirbay,Mittelfeld,19,6190000
+134,Amiri,Mittelfeld,3,3350000
+135,Lucas Alario,Sturm,10,4870000
+136,Schick,Sturm,15,10670000
+137,Bailey,Sturm,8,4800000
+138,Bellarabi,Sturm,12,4230000
+139,Diaby,Sturm,2,4800000
+140,Pentke,Torwart,0,200000
+141,L. Philipp,Torwart,0,160000
+142,Baumann,Torwart,12,2810000
+143,Bogarde,Abwehr,0,310000
+144,Skov,Abwehr,13,4520000
+145,K. Adams,Abwehr,2,760000
+146,Brenet,Abwehr,0,330000
+147,Posch,Abwehr,6,2280000
+148,Kadeřábek,Abwehr,1,2170000
+149,Sessegnon,Abwehr,1,5250000
+150,Bičakčić,Abwehr,12,670000
+151,Akpoguma,Abwehr,15,3290000
+152,Nordtveit,Abwehr,0,390000
+153,Vogt,Abwehr,13,3130000
+154,B. Hübner,Abwehr,0,2110000
+155,Stafylidis,Abwehr,0,300000
+156,Samassékou,Mittelfeld,13,3160000
+157,Rudy,Mittelfeld,2,3140000
+158,Baumgartner,Mittelfeld,9,3610000
+159,Grillitsch,Mittelfeld,3,2710000
+160,Gaćinović,Mittelfeld,10,2560000
+161,Geiger,Mittelfeld,16,3490000
+162,Klauss,Sturm,0,540000
+163,Kramarić,Sturm,43,13120000
+164,Beier,Sturm,0,270000
+165,Dabbur,Sturm,12,4420000
+166,Bruun Larsen,Sturm,-2,760000
+167,Adamyan,Sturm,0,560000
+168,Bebou,Sturm,12,3610000
+169,Belfodil,Sturm,5,2160000
+170,Pervan,Torwart,7,790000
+171,Kasten,Torwart,0,160000
+172,Casteels,Torwart,9,2640000
+173,Klinger,Torwart,0,160000
+174,Siersleben ,Abwehr,0,220000
+175,Baku,Abwehr,3,2140000
+176,Roussillon,Abwehr,4,2060000
+177,Mbabu,Abwehr,0,1200000
+178,Paulo Otávio,Abwehr,7,1680000
+179,Pongračić,Abwehr,0,610000
+180,Lacroix,Abwehr,13,4390000
+181,William,Abwehr,0,410000
+182,J. Bruma,Abwehr,0,300000
+183,Brooks,Abwehr,15,2870000
+184,Arnold,Mittelfeld,20,6390000
+185,R. Steffen,Mittelfeld,8,2610000
+186,Guilavogui,Mittelfeld,17,3910000
+187,Gerhardt,Mittelfeld,11,1950000
+188,Malli,Mittelfeld,0,590000
+189,Schlager,Mittelfeld,9,2920000
+190,Marmoush,Sturm,0,380000
+191,Białek,Sturm,0,1480000
+192,Brekalo,Sturm,18,5000000
+193,Klaus,Sturm,6,1520000
+194,Mehmedi,Sturm,11,2740000
+195,Joao Victor,Sturm,8,2120000
+196,M. Philipp,Sturm,0,7240000
+197,Weghorst,Sturm,14,9470000
+198,Ginczek,Sturm,2,1820000
+199,N. Thiede,Torwart,0,160000
+200,Flekken,Torwart,0,660000
+201,Uphoff,Torwart,0,450000
+202,F. Müller,Torwart,3,2080000
+203,K. Schlotterbeck,Abwehr,0,1100000
+204,G. Itter,Abwehr,0,270000
+205,Kübler,Abwehr,-2,360000
+206,Lienhart,Abwehr,14,2240000
+207,C. Günter,Abwehr,9,2890000
+208,Heintz,Abwehr,13,2680000
+209,J. Schmid,Abwehr,9,3110000
+210,Gulde,Abwehr,1,960000
+211,Keitel,Mittelfeld,0,650000
+212,Kwon,Mittelfeld,2,1060000
+213,Sallai,Mittelfeld,14,3070000
+214,Til,Mittelfeld,0,2690000
+215,Tempelmann,Mittelfeld,0,200000
+216,Santamaria,Mittelfeld,9,5230000
+217,Abrashi,Mittelfeld,1,440000
+218,Haberer,Mittelfeld,0,890000
+219,Grifo,Mittelfeld,17,5250000
+220,Höfler,Mittelfeld,10,2820000
+221,Höler,Sturm,16,4100000
+222,Jeong,Sturm,8,1980000
+223,Demirović,Sturm,1,1670000
+224,Petersen,Sturm,20,6140000
+225,Trapp,Torwart,15,2910000
+226,Schubert,Torwart,0,310000
+227,Hasebe,Abwehr,9,2440000
+228,Hinteregger,Abwehr,12,4830000
+229,Abraham,Abwehr,10,2210000
+230,N'Dicka,Abwehr,0,1400000
+231,Tuta,Abwehr,1,610000
+232,Touré,Abwehr,10,3050000
+233,Brugger,Abwehr,0,200000
+234,Fahrnberger,Abwehr,0,230000
+235,Ćavar,Mittelfeld,0,260000
+236,Willems,Mittelfeld,0,270000
+237,Kamada,Mittelfeld,30,6580000
+238,Barkok,Mittelfeld,4,790000
+239,Sow,Mittelfeld,1,990000
+240,Ilsanker,Mittelfeld,9,2560000
+241,Rode,Mittelfeld,18,3950000
+242,Chandler,Mittelfeld,0,740000
+243,da Costa,Mittelfeld,1,1530000
+244,Kohr,Mittelfeld,3,1090000
+245,Durm,Mittelfeld,0,240000
+246,Kostić,Mittelfeld,1,5240000
+247,Zuber,Mittelfeld,13,3620000
+248,Hrustic,Mittelfeld,0,2030000
+249,Dost,Sturm,33,8490000
+250,Younes,Sturm,1,5540000
+251,André Silva,Sturm,28,9290000
+252,Ache,Sturm,2,780000
+253,Makanda,Sturm,0,260000
+254,Palmowski,Torwart,0,160000
+255,Schwolow,Torwart,4,2480000
+256,Körber,Torwart,0,160000
+257,Jarstein,Torwart,0,370000
+258,Torunarigha,Abwehr,6,1600000
+259,Pekarik,Abwehr,13,2450000
+260,Netz,Abwehr,0,290000
+261,Zeefuik,Abwehr,4,2010000
+262,Albrecht,Abwehr,0,240000
+263,Klünter,Abwehr,0,330000
+264,O. Rekik,Abwehr,0,370000
+265,Mittelstädt,Abwehr,17,3470000
+266,M. Dárdai,Abwehr,0,290000
+267,N. Stark,Abwehr,4,1770000
+268,Alderete,Abwehr,0,2610000
+269,Plattenhardt,Abwehr,1,1230000
+270,Boyata,Abwehr,4,3290000
+271,Tousart,Mittelfeld,12,4430000
+272,Löwen,Mittelfeld,3,930000
+273,M. Čović ,Mittelfeld,0,220000
+274,Guendouzi,Mittelfeld,0,6690000
+275,Darida,Mittelfeld,10,3080000
+276,Ascacíbar,Mittelfeld,0,1170000
+277,Leckie,Sturm,6,840000
+278,Jhon Córdoba ,Sturm,19,6490000
+279,P. Dárdai,Sturm,0,200000
+280,Lukébakio,Sturm,12,4380000
+281,Dilrosun,Sturm,1,1650000
+282,Ngankam,Sturm,8,1660000
+283,Piątek,Sturm,6,3100000
+284,Redan,Sturm,1,540000
+285,Matheus Cunha,Sturm,27,8660000
+286,Karius,Torwart,0,2340000
+287,Luthe,Torwart,8,1750000
+288,Moser,Torwart,0,160000
+289,Busk,Torwart,0,170000
+290,N. Schlotterbeck,Abwehr,18,2700000
+291,M. Friedrich,Abwehr,33,4590000
+292,Gießelmann,Abwehr,-6,680000
+293,F. Hübner,Abwehr,0,390000
+294,Knoche,Abwehr,8,2420000
+295,C. Lenz,Abwehr,14,2960000
+296,Trimmel,Abwehr,15,3770000
+297,Ryerson,Mittelfeld,6,1050000
+298,Gentner,Mittelfeld,3,1540000
+299,Prömel,Mittelfeld,6,1490000
+300,Andrich,Mittelfeld,9,1710000
+301,Gogia,Mittelfeld,0,280000
+302,Griesbeck ,Mittelfeld,0,560000
+303,Bülter,Mittelfeld,14,2820000
+304,Awoniyi,Sturm,2,1200000
+305,Maciejewski,Sturm,0,240000
+306,S. Becker,Sturm,9,2580000
+307,Ingvartsen,Sturm,14,3490000
+308,Teuchert,Sturm,1,850000
+309,Pohjanpalo,Sturm,8,3170000
+310,Ujah,Sturm,0,450000
+311,M. Kruse,Sturm,10,7160000
+312,K. Endo,Sturm,-1,920000
+313,Langer,Torwart,0,170000
+314,Rönnow,Torwart,7,2040000
+315,Fährmann,Torwart,-8,910000
+316,Oczipka,Abwehr,-4,1460000
+317,Thiaw,Abwehr,0,320000
+318,T. Becker,Abwehr,0,400000
+319,Kabak,Abwehr,-9,1680000
+320,Mendyl,Abwehr,0,290000
+321,Ludewig,Abwehr,2,2240000
+322,Stambouli,Abwehr,-3,1130000
+323,Salif Sané,Abwehr,6,3390000
+324,Nastasić,Abwehr,0,1330000
+325,Bentaleb,Mittelfeld,2,2130000
+326,Taitague,Mittelfeld,0,220000
+327,Bozdoğan,Mittelfeld,-2,810000
+328,Mercan,Mittelfeld,0,260000
+329,Boujellab,Mittelfeld,-4,540000
+330,Schöpf,Mittelfeld,-1,820000
+331,Omar Mascarell,Mittelfeld,9,2010000
+332,Harit,Mittelfeld,0,3010000
+333,Serdar,Mittelfeld,3,1960000
+334,Kutucu,Sturm,0,850000
+335,Uth,Sturm,12,4480000
+336,Raman,Sturm,1,1530000
+337,Ibišević,Sturm,-1,2180000
+338,Matondo,Sturm,-3,710000
+339,Gonçalo Paciência,Sturm,10,3720000
+340,Skrzybski,Sturm,5,900000
+341,Hanin,Torwart,0,160000
+342,Dahmen,Torwart,0,160000
+343,Liesegang,Torwart,0,160000
+344,Zentner,Torwart,4,1630000
+345,Brosinski,Abwehr,1,1400000
+346,Niakhaté,Abwehr,-2,1440000
+347,Kilian,Abwehr,5,990000
+348,A. Hack,Abwehr,0,500000
+349,St. Juste,Abwehr,3,1260000
+350,Aarón Martín,Abwehr,2,1020000
+351,Bell,Abwehr,0,470000
+352, Lavalée,Abwehr,0,350000
+353,Mwene,Abwehr,-2,460000
+354,E. Fernandes,Mittelfeld,1,500000
+355,Boëtius,Mittelfeld,12,2470000
+356,Barreiro,Mittelfeld,7,1490000
+357,Tauer,Mittelfeld,2,360000
+358,Nebel,Mittelfeld,2,540000
+359,Kunde,Mittelfeld,-1,1430000
+360,Latza,Mittelfeld,6,1490000
+361,Stöger,Mittelfeld,0,3930000
+362,Öztunali,Mittelfeld,0,860000
+363,Papela,Mittelfeld,0,200000
+364,Quaison,Sturm,6,3150000
+365,Onisiwo,Sturm,-1,1360000
+366,Burkardt,Sturm,6,1130000
+367,Ji,Sturm,0,440000
+368,Abass,Sturm,0,390000
+369,Szalai,Sturm,0,840000
+370,Mustapha,Sturm,0,190000
+371,Mateta,Sturm,10,3890000
+372,Krahl,Torwart,0,160000
+373,Zieler,Torwart,0,550000
+374,T. Horn,Torwart,7,1620000
+375,Katterbach,Abwehr,0,830000
+376,Czichos,Abwehr,8,1310000
+377,Ehizibue,Abwehr,10,1430000
+378,B. Schmitz,Abwehr,1,900000
+379,J. Horn,Abwehr,10,1500000
+380,Jorge Meré,Abwehr,0,470000
+381,F. Sörensen,Abwehr,1,580000
+382,Bornauw,Abwehr,11,2970000
+383,Voloder,Abwehr,0,230000
+384,Jakobs ,Mittelfeld,1,1580000
+385,Drexler,Mittelfeld,11,2030000
+386,Skhiri,Mittelfeld,6,1800000
+387,Clemens,Mittelfeld,0,270000
+388,Höger,Mittelfeld,2,450000
+389,Hector,Mittelfeld,1,2870000
+390,Kainz,Mittelfeld,0,920000
+391,Duda,Mittelfeld,7,3060000
+392,S. Özcan,Mittelfeld,3,790000
+393,Rexhbecaj,Mittelfeld,12,2910000
+394,S. Andersson,Sturm,14,4110000
+395,Arokodare,Sturm,3,1330000
+396,Lemperle,Sturm,0,260000
+397,Thielmann,Sturm,6,1390000
+398,Modeste,Sturm,0,2690000
+399,M. Wolf,Sturm,4,3080000
+400,Limnios,Sturm,4,1810000
+401,Gikiewicz,Torwart,20,3300000
+402,Koubek,Torwart,0,240000
+403,Leneis,Torwart,0,160000
+404,Oxford,Abwehr,5,1130000
+405,Uduokhai,Abwehr,23,3430000
+406,Gouweleeuw,Abwehr,12,2470000
+407,Framberger,Abwehr,16,3300000
+408,Iago,Abwehr,16,3670000
+409,Pedersen,Abwehr,6,530000
+410,Suchý,Abwehr,0,350000
+411,F. Götze,Abwehr,0,260000
+412,Gumny,Abwehr,0,780000
+413,Vargas,Mittelfeld,10,2330000
+414,Jensen,Mittelfeld,2,960000
+415,Morávek,Mittelfeld,0,240000
+416,D. Caligiuri,Mittelfeld,17,4820000
+417,Strobl,Mittelfeld,4,1240000
+418,Carlos Gruezo,Mittelfeld,10,2680000
+419,R. Khedira,Mittelfeld,12,2400000
+420,Richter,Sturm,3,1430000
+421,Gregoritsch,Sturm,11,3570000
+422,Hahn,Sturm,14,2900000
+423,Niederlechner,Sturm,7,3530000
+424,Finnbogason,Sturm,3,1450000
+425,Sarenren-Bazee,Sturm,0,430000
+426,Dos Santos Haesler,Torwart,0,160000
+427,Pavlenka,Torwart,9,2150000
+428,Kapino,Torwart,0,210000
+429,Toprak,Abwehr,2,1410000
+430,Mbom,Abwehr,10,2630000
+431,C. Groß,Abwehr,2,520000
+432,Augustinsson,Abwehr,23,4190000
+433,Friedl,Abwehr,8,1940000
+434,Moisander,Abwehr,-2,830000
+435,Veljković,Abwehr,5,1510000
+436,Agu,Abwehr,0,590000
+437,Gebre Selassie,Abwehr,5,1720000
+438,Gruev,Mittelfeld,0,270000
+439,R. Schmid,Mittelfeld,0,580000
+440,Schönfelder,Mittelfeld,0,210000
+441,Möhwald,Mittelfeld,2,1500000
+442,Erras,Mittelfeld,0,1080000
+443,Bittencourt,Mittelfeld,19,4840000
+444,M. Eggestein,Mittelfeld,8,2770000
+445,Chong,Sturm,1,2990000
+446,Selke,Sturm,11,2230000
+447,Ōsako,Sturm,2,1690000
+448,Woltemade,Sturm,0,870000
+449,Füllkrug,Sturm,32,5730000
+450,Sargent,Sturm,8,2900000
+451,Rashica,Sturm,-1,7220000
+452,Rehnen,Torwart,0,160000
+453,Ortega Moreno,Torwart,11,2530000
+454,Linnér,Torwart,0,160000
+455,Laursen,Abwehr,5,1040000
+456,de Medina,Abwehr,-2,590000
+457,Behrendt,Abwehr,1,330000
+458,Brunner,Abwehr,10,1840000
+459,J. Nilsson,Abwehr,0,710000
+460,Pieper,Abwehr,23,3980000
+461,Lucoqui,Abwehr,5,1500000
+462,van der Hoorn,Abwehr,14,3120000
+463,Consbruch,Mittelfeld,0,370000
+464,Seufert,Mittelfeld,0,280000
+465,Kunze,Mittelfeld,7,920000
+466,Yabo,Mittelfeld,1,480000
+467,Prietl,Mittelfeld,10,1710000
+468,Hartel,Mittelfeld,10,2710000
+469,A. Maier,Mittelfeld,4,1790000
+470,Edmundsson,Mittelfeld,8,1500000
+471,Gebauer,Sturm,-1,640000
+472,Niemann,Sturm,0,240000
+473,Soukou,Sturm,7,1500000
+474,Schipplock,Sturm,5,930000
+475,Seb. Müller,Sturm,0,270000
+476,Voglsammer,Sturm,0,1290000
+477,Sergio Córdova,Sturm,6,1710000
+478,F. Klos,Sturm,6,2660000
+479,Doan,Sturm,14,2310000
+480,Grahl,Torwart,0,170000
+481,Bredlow,Torwart,0,220000
+482,Kobel,Torwart,13,2470000
+483,Aidonis,Abwehr,0,260000
+484,Karazor,Abwehr,7,870000
+485,Mack,Abwehr,0,280000
+486,Awoudja,Abwehr,0,180000
+487,B. Sosa,Abwehr,3,1270000
+488,Mola,Abwehr,0,330000
+489,Kaminski,Abwehr,0,620000
+490,Stenzel,Abwehr,1,1240000
+491,Anton,Abwehr,6,1990000
+492,Kempf,Abwehr,20,2870000
+493,Mavropanos,Abwehr,4,1920000
+494,Wamangituka,Mittelfeld,20,4790000
+495,Förster,Mittelfeld,0,740000
+496,W. Endo,Mittelfeld,18,4120000
+497,Egloff,Mittelfeld,0,740000
+498,Churlinov,Mittelfeld,0,280000
+499,M. Klimowicz,Mittelfeld,14,3100000
+500,Didavi,Mittelfeld,20,5280000
+501,Klement,Mittelfeld,10,2450000
+502,Thommy,Mittelfeld,0,3160000
+503,Ahamada,Mittelfeld,0,780000
+504,Mangala,Mittelfeld,1,1810000
+505,Castro,Mittelfeld,21,3880000
+506,Al Ghaddioui,Sturm,1,680000
+507,Kalajdžić,Sturm,28,6790000
+508,Massimo,Sturm,5,1110000
+509,González,Sturm,1,5060000
+510,Cissé,Sturm,1,760000
+511,T. Coulibaly,Sturm,6,1200000
