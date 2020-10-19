@@ -6,6 +6,8 @@ Script to get the market values of all players from one club.
 
 Template from: https://towardsdatascience.com/web-scraping-scraping-table-data-1665b6b2271c
 
+Added to GitHub.
+
 TODO:
     - Get daytime
     - Find good data structure to make it plotable
