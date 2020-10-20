@@ -10,6 +10,7 @@ Added to GitHub.
 
 TODO:
     - Get daytime
+    - Get trend
     - Find good data structure to make it plotable
     - Run script automatically
     - import points from matchday
@@ -17,11 +18,11 @@ TODO:
 @author: cm
 """
 
-import requests
-import pandas as pd
-from bs4 import BeautifulSoup
-import re
-
+import requests                             # to get url
+import pandas as pd                         # for dataframe
+from bs4 import BeautifulSoup               # for Webscaping
+from datetime import datetime, timedelta    # for timestamp
+import pickle                               # for saving and loading variables
 
 #%% Init
 url = ["https://stats.comunio.de/squad/1-FC+Bayern+M%C3%BCnchen",
@@ -85,72 +86,116 @@ def get_the_body(TableContent,all_rows):
             # row_item.text removes the tags from the entries
             # the following regex is to remove \xa0 and \n and comma from row_item.text
             # xa0 encodes the flag, \n is the newline and comma separates thousands in numbers
-            aa = re.sub("(\xa0)|(\n)|,","",row_item.text)
+            aa = row_item.text
             #append aa to row - note one row entry is being appended
             row.append(aa)
         # append one row to all_rows
         all_rows.append(row)
     return all_rows
 
+def create_dataframe(all_rows,headings,now):
+    # We can now use the data on all_rowsa and headings to make a table
+    # all_rows becomes our data and headings the column names
+    df = pd.DataFrame(data=all_rows,columns=headings)
+    df.head()
+    
+    # Dont need column "Auszeichnungen"
+    del df["Auszeichnungen"]
+    # Trend is empty hence also delete
+    del df["Trend"]
+    
+    # Transform Marktwert to integer
+    for i in range(0,len(df['Marktwert'])):
+        string = df.loc[i,'Marktwert']
+        #print(string)
+        number = string.replace('.','')
+        #print(number)
+        integer = int(number)
+        #print(integer)
+        df.loc[i,'Marktwert'] = integer
+    
+    # Transform Punkte to integer
+    for i in range(0,len(df['Pkt.'])):
+        string = df.loc[i,'Pkt.']
+        #print(string)
+        number = string.replace('.','')
+        #print(number)
+        integer = int(number)
+        #print(integer)
+        df.loc[i,'Pkt.'] = integer
+        
+    df.insert(0,'Date',now.date())
+    return df
+
 #%% Main
 
 # if __name__ == '__main__':
-
-all_rows = [] # will be a list for list for all rows
-for link in url:
-    soup = make_the_soup(link)
-    TableContent = scrape_the_page(soup)
-    headings = get_the_headings(TableContent)
-    all_rows = get_the_body(TableContent,all_rows)
-
-# We can now use the data on all_rowsa and headings to make a table
-# all_rows becomes our data and headings the column names
-df = pd.DataFrame(data=all_rows,columns=headings)
-df.head()
-
-# Dont need column "Auszeichnungen"
-del df["Auszeichnungen"]
-# Trend is empty hence also delete
-del df["Trend"]
-
-# Transform Marktwert to integer
-for i in range(0,len(df['Marktwert'])):
-    string = df.loc[i,'Marktwert']
-    #print(string)
-    number = string.replace('.','')
-    #print(number)
-    integer = int(number)
-    #print(integer)
-    df.loc[i,'Marktwert'] = integer
-
-# Transform Punkte to integer
-for i in range(0,len(df['Pkt.'])):
-    string = df.loc[i,'Pkt.']
-    #print(string)
-    number = string.replace('.','')
-    #print(number)
-    integer = int(number)
-    #print(integer)
-    df.loc[i,'Pkt.'] = integer
-
-# Export dataframe
-df.to_csv('ClubScrape.csv')
-
-
     
-#%% Test
-# test list 
-data = [['tom', 'abw', '10',10000], ['nick', 'tor', '10',1000000015], ['juli', 'abw', '10',10000]] 
-  
-# Create the pandas DataFrame 
-testframe = pd.DataFrame(data,columns=list(df.columns.values)) 
+# Load the data
+df_all = pd.read_csv('ClubScrape.csv')
+    
+# Compare time and from last update to now. 
+# Load the last time 
+last_time = pickle.load(open('timestamp','rb'))
+# get the time now and safe it in timestamp to be last_time when script executed next time
+now = datetime.now()
+pickle.dump(now, open('timestamp','wb'))
 
-newdf = df.append(testframe, ignore_index=True)
+# Comunio updates market value once per day
+OneDay = timedelta(days=1)
+TimePassed = now - last_time
+if TimePassed >= OneDay: 
+
+    all_rows = [] # will be a list for list for all rows
+    for link in url:
+        soup = make_the_soup(link)
+        TableContent = scrape_the_page(soup)
+        headings = get_the_headings(TableContent)
+        all_rows = get_the_body(TableContent,all_rows)
+        
+    df_update = create_dataframe(all_rows, headings,now)
+    
+else:
+    print('')
+    print('Not a whole day passed. Until now only {0} passed'.format(TimePassed))
+
+
+if 'df_update' in globals() or 'df' in locals():
+    print('df in exists')
+    df_all.append(df_update, ignore_index=True)
+# Export dataframe
+df_all.to_csv('ClubScrape.csv', index = None)
+
+
+#%% Test
+
+df = df_all
+ 
+# # test list 
+# data = [['tom', 'abw', '10',10000], ['nick', 'tor', '10',1000000015], ['juli', 'abw', '10',10000]] 
+  
+# # Create the pandas DataFrame 
+# testframe = pd.DataFrame(data,columns=list(df.columns.values)) 
+
+# newdf = df.append(testframe, ignore_index=True)
 
 # insert a new column for daytime e.g.
-date = 'today'
-dateframe = newdf.insert(0,'Date',date)
+# date = 'today'
+# dateframe = newdf.insert(0,'Date',date)
 
 # Search for items in list template
 Tor_idx = df['Spieler'].str.contains('Lewandowski')
 Tor = df[Tor_idx]
+
+# # file= open('variable_dump','wb')
+# # pickle.dump(['Tor'],  open('variable_dump','wb') )
+
+# file= open('variable_dump','rb')
+# d= pickle.load(open('variable_dump','rb'))
+# print(d)
+# d.append('abw')
+# a='test'
+
+# pickle.dump(d,  open('variable_dump','wb') )
+# d= pickle.load(open('variable_dump','rb'))
+# print(d)
