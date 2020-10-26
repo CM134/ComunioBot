@@ -5,6 +5,8 @@ The file uses BeautifulSoup to get the current market values of players in the f
 
 Scraping the website uses the template from: https://towardsdatascience.com/web-scraping-scraping-table-data-1665b6b2271c
 
+Scheduling script after guide from: https://www.jcchouinard.com/python-automation-using-task-scheduler/
+
 Ultimate goal is to create a bot that can trade players. 
 
 # Needed information

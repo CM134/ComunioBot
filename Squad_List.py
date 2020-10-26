@@ -6,15 +6,12 @@ Script to get the market values of all players from one club.
 
 Template from: https://towardsdatascience.com/web-scraping-scraping-table-data-1665b6b2271c
 
-Added to GitHub.
 
 TODO:
-    - Get daytime
+    - make plot
     - Get trend
-    - Find good data structure to make it plotable
-    - Run script automatically
     - import points from matchday
-
+    - Run script automatically
 @author: cm
 """
 
@@ -132,7 +129,7 @@ def create_dataframe(all_rows,headings,now):
 # if __name__ == '__main__':
     
 # Load the data
-df_all = pd.read_csv('ClubScrape.csv')
+df_imported = pd.read_csv('ClubScrape.csv')
     
 # Compare time and from last update to now. 
 # Load the last time 
@@ -143,6 +140,7 @@ pickle.dump(now, open('timestamp','wb'))
 
 # Comunio updates market value once per day
 OneDay = timedelta(days=1)
+last_time = last_time - OneDay # to import data of this day again if first run didnt work
 TimePassed = now - last_time
 if TimePassed >= OneDay: 
 
@@ -161,8 +159,8 @@ else:
 
 
 if 'df_update' in globals() or 'df' in locals():
-    print('df in exists')
-    df_all.append(df_update, ignore_index=True)
+    print('Updated the Players list with todays values')
+    df_all = df_imported.append(df_update, ignore_index=True)
 # Export dataframe
 df_all.to_csv('ClubScrape.csv', index = None)
 
