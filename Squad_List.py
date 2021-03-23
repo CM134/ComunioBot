@@ -1,3 +1,4 @@
+
 # -*- coding: utf-8 -*-
 """
 Created on Sun Oct 18 19:18:04 2020
@@ -8,10 +9,28 @@ Template from: https://towardsdatascience.com/web-scraping-scraping-table-data-1
 
 
 TODO:
-    - make plot
-    - Get trend
-    - import points from matchday
-    - Run script automatically
+    (- make plot)
+        
+    - data collection:
+        
+            
+        - get info about player status. Gesperrt, Verletzt,...
+        
+    - get information from comunio inside
+        - login to page
+        - navigate through page
+        - e.g.players of transfermarket
+        - track the money of all the other players
+    - analysing tools:
+        - Calculate Preis-Leistungs-Verhaeltnis over e.g. 3 matchdays. and then if this is raising as we
+        - can regression be applied?
+        
+    - create a gui
+    - start bot
+        - Get trend
+        - automate selling
+        - automate buying
+        - add critira who to buy and sell
 @author: cm
 """
 
@@ -19,7 +38,10 @@ import requests                             # to get url
 import pandas as pd                         # for dataframe
 from bs4 import BeautifulSoup               # for Webscaping
 from datetime import datetime, timedelta    # for timestamp
-import pickle                               # for saving and loading variables
+# import pickle                             # for saving and loading variables
+import matplotlib.pyplot as plt
+import numpy as np
+
 
 #%% Init
 url = ["https://stats.comunio.de/squad/1-FC+Bayern+M%C3%BCnchen",
@@ -99,7 +121,7 @@ def create_dataframe(all_rows,headings,now):
     # Dont need column "Auszeichnungen"
     del df["Auszeichnungen"]
     # Trend is empty hence also delete
-    del df["Trend"]
+    del df["Marktwert-Trend"]
     
     # Transform Marktwert to integer
     for i in range(0,len(df['Marktwert'])):
@@ -121,79 +143,51 @@ def create_dataframe(all_rows,headings,now):
         #print(integer)
         df.loc[i,'Pkt.'] = integer
         
-    df.insert(0,'Date',now.date())
+    df.insert(0,'Date',now)
     return df
 
 #%% Main
 
-# if __name__ == '__main__':
+if __name__ == '__main__':
     
-# Load the data
-df_imported = pd.read_csv('ClubScrape.csv')
-    
-# Compare time and from last update to now. 
-# Load the last time 
-last_time = pickle.load(open('timestamp','rb'))
-# get the time now and safe it in timestamp to be last_time when script executed next time
-now = datetime.now()
-pickle.dump(now, open('timestamp','wb'))
-
-# Comunio updates market value once per day
-OneDay = timedelta(days=1)
-last_time = last_time - OneDay # to import data of this day again if first run didnt work
-TimePassed = now - last_time
-if TimePassed >= OneDay: 
-
-    all_rows = [] # will be a list for list for all rows
-    for link in url:
-        soup = make_the_soup(link)
-        TableContent = scrape_the_page(soup)
-        headings = get_the_headings(TableContent)
-        all_rows = get_the_body(TableContent,all_rows)
+    # Load the data
+    df_imported = pd.read_csv('ClubScrape.csv')
         
-    df_update = create_dataframe(all_rows, headings,now)
+    # Compare time and from last update to now. 
+    # Load the last time
     
-else:
-    print('')
-    print('Not a whole day passed. Until now only {0} passed'.format(TimePassed))
+    last_time_str = df_imported['Date'].iloc[-1]
+    last_time = datetime.strptime(last_time_str, '%Y-%m-%d').date()
+    
+    # last_time = pickle.load(open('timestamp','rb'))
+    # get the time now and safe it in timestamp to be last_time when script executed next time
+    now = datetime.now().date()
+    # pickle.dump(now, open('timestamp','wb'))
+    
+    # Comunio updates market value once per day
+    OneDay = timedelta(days=1)
+    # TimePassed =  OneDay # to import data of this day again if first run didnt work
+    TimePassed = now - last_time
+    if TimePassed >= OneDay: 
+    
+        all_rows = [] # will be a list for list for all rows
+        for link in url:
+            soup = make_the_soup(link)
+            TableContent = scrape_the_page(soup)
+            headings = get_the_headings(TableContent)
+            all_rows = get_the_body(TableContent,all_rows)
+            
+        df_update = create_dataframe(all_rows, headings,now)
+        
+    else:
+        print('')
+        print('Did not import new data. Last timestamp is: {}'.format(last_time))
+    
+    
+    if 'df_update' in globals() or 'df_update' in locals():
+        print('Updated the Players list with todays values')
+        df_all = df_imported.append(df_update, ignore_index=True)
+        # Export dataframe
+        df_all.to_csv('ClubScrape.csv', index = None)
 
 
-if 'df_update' in globals() or 'df' in locals():
-    print('Updated the Players list with todays values')
-    df_all = df_imported.append(df_update, ignore_index=True)
-# Export dataframe
-df_all.to_csv('ClubScrape.csv', index = None)
-
-
-#%% Test
-
-df = df_all
- 
-# # test list 
-# data = [['tom', 'abw', '10',10000], ['nick', 'tor', '10',1000000015], ['juli', 'abw', '10',10000]] 
-  
-# # Create the pandas DataFrame 
-# testframe = pd.DataFrame(data,columns=list(df.columns.values)) 
-
-# newdf = df.append(testframe, ignore_index=True)
-
-# insert a new column for daytime e.g.
-# date = 'today'
-# dateframe = newdf.insert(0,'Date',date)
-
-# Search for items in list template
-Tor_idx = df['Spieler'].str.contains('Lewandowski')
-Tor = df[Tor_idx]
-
-# # file= open('variable_dump','wb')
-# # pickle.dump(['Tor'],  open('variable_dump','wb') )
-
-# file= open('variable_dump','rb')
-# d= pickle.load(open('variable_dump','rb'))
-# print(d)
-# d.append('abw')
-# a='test'
-
-# pickle.dump(d,  open('variable_dump','wb') )
-# d= pickle.load(open('variable_dump','rb'))
-# print(d)
