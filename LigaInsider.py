@@ -25,79 +25,61 @@ def make_the_soup(url):
     soup = BeautifulSoup(page, 'html.parser')
     return soup
 
-
-def scrape_the_page(soup):
+def Ligainsider():
+    url = 'https://www.ligainsider.de/bundesliga/verletzte-und-gesperrte-spieler/'
+    
+    # scrape 
+    soup = make_the_soup(url)
+    
     # import the whole table
-    TableContent = soup.find('table', {'class':'rangliste'})
-    return TableContent
+    maincontainer = soup.find(id = 'main_container' )
     
-def get_the_headings(TableContent):
-    # Lets now iterate through the head HTML code and make list of clean headings
-    # Head values (Column names) are the first items of the body list
-    head =  TableContent.find('div') # 0th item is the header row
-    # Declare empty list to keep Columns names
-    headings = []
-    for item in head.find_all("th"): # loop through all th elements
-        # convert the th elements to text and strip "\n"
-        heading = (item.text).rstrip("\n")
-        # append the clean column name to headings
-        headings.append(heading)
-    # print(headings)
-    return headings
-
-def get_the_body(TableContent,all_rows):
-    body = TableContent.find_all('tbody')
-    body_rows = body[0].find_all('tr')
-    # print(body_rows)
+    #extract clubs
+    club_container = maincontainer.find_all('div', class_ = 'personal_table personal_table_top')
     
-    # Next is now to loop though the rest of the rows
-    for row_num in range(len(body_rows)): # A row at a time
-        row = [] # this will old entries for one row
-        for row_item in body_rows[row_num].find_all("td"): #loop through all row entries
-            # row_item.text removes the tags from the entries
-            # the following regex is to remove \xa0 and \n and comma from row_item.text
-            # xa0 encodes the flag, \n is the newline and comma separates thousands in numbers
-            aa = row_item.text
-            #append aa to row - note one row entry is being appended
-            row.append(aa)
-        # append one row to all_rows
-        all_rows.append(row)
-    return all_rows
-
-def create_dataframe(all_rows,headings,now):
-    # We can now use the data on all_rowsa and headings to make a table
-    # all_rows becomes our data and headings the column names
-    df = pd.DataFrame(data=all_rows,columns=headings)
-    df.head()
+    # print('There are', len(club_container), 'clubs')
     
-    # Dont need column "Auszeichnungen"
-    del df["Auszeichnungen"]
-    # Trend is empty hence also delete
-    del df["Marktwert-Trend"]
+    # get all information
     
-    # Transform Marktwert to integer
-    for i in range(0,len(df['Marktwert'])):
-        string = df.loc[i,'Marktwert']
-        #print(string)
-        number = string.replace('.','')
-        #print(number)
-        integer = int(number)
-        #print(integer)
-        df.loc[i,'Marktwert'] = integer
     
-    # Transform Punkte to integer
-    for i in range(0,len(df['Pkt.'])):
-        string = df.loc[i,'Pkt.']
-        #print(string)
-        number = string.replace('.','')
-        #print(number)
-        integer = int(number)
-        #print(integer)
-        df.loc[i,'Pkt.'] = integer
+    headings = ['Player', 'Club', 'Reason', 'Explanation', 'Missing since']
+    
+    all_rows = np.asarray(headings).reshape(1,-1)
+    
+    for club in club_container:
+    
+        # get club name
         
-    df.insert(0,'Date',now)
-    return df
+        clubname = club.h2.text
+        
+        # get all players of club
+        
+        player_container = club.find_all('div', class_ = 'small_table_row')
+        # print('There are', len(player_container), 'players for club', clubname)
+        
+        if player_container[0].div.span.text == 'Derzeit keine verletzten oder gesperrten Spieler':
+            continue
+        
+        for player in player_container:
+            playername = player.strong.text
+            
+            reason_type = player.div.find('img')['alt']
+            
+            reason_text = player.find('div', class_ ='small_table_column2' ).span.text
 
+            missing_since = player.find('div', class_ ='small_table_column4' ).span.text
+
+            row = [playername,clubname,reason_type,reason_text,missing_since]
+
+            row = np.asarray(row).reshape(1,-1)
+            all_rows = np.append(all_rows, row, axis = 0)
+                
+        
+    # create dataframe
+    df_LigaInsider = pd.DataFrame(data=all_rows[1:,:],columns=headings)
+    
+    return df_LigaInsider
+    
 
 #%%
 
@@ -105,8 +87,78 @@ def create_dataframe(all_rows,headings,now):
 url = 'https://www.ligainsider.de/bundesliga/verletzte-und-gesperrte-spieler/'
 
 #%% make the soup8
-response = requests.get(url)
 
-page = response.content
-#print(page)
-soup = BeautifulSoup(page, 'html.parser')
+soup = make_the_soup(url)
+
+
+
+#%% Start working with data
+
+# import the whole table
+maincontainer = soup.find(id = 'main_container' )
+
+
+
+#%% extract clubs
+
+
+club_container = maincontainer.find_all('div', class_ = 'personal_table personal_table_top')
+
+# print('There are', len(club_container), 'clubs')
+
+# get all information
+
+
+headings = ['Player', 'Club', 'Reason', 'Explanation', 'Missing since']
+
+all_rows = np.asarray(headings).reshape(1,-1)
+
+for club in club_container:
+
+    # get club name
+    
+    clubname = club.h2.text
+    
+    # get all players of club
+    
+    player_container = club.find_all('div', class_ = 'small_table_row')
+    # print('There are', len(player_container), 'players for club', clubname)
+    
+    if player_container[0].div.span.text == 'Derzeit keine verletzten oder gesperrten Spieler':
+        continue
+    
+    for player in player_container:
+        # try:
+        playername = player.strong.text
+        # print(playername)
+        
+        reason_type = player.div.find('img')['alt']
+        #row.append(reason_type)
+        # print(reason_type)
+        
+        reason_text = player.find('div', class_ ='small_table_column2' ).span.text
+        
+        # print(reason_text)
+        
+        missing_since = player.find('div', class_ ='small_table_column4' ).span.text
+        # print(missing_since)
+        
+        
+        row = [playername,clubname,reason_type,reason_text,missing_since]
+        # print(row)
+            
+        # except:
+        #     print('No data imported for')            
+        #     continue
+        
+        row = np.asarray(row).reshape(1,-1)
+        all_rows = np.append(all_rows, row, axis = 0)
+            
+    
+# create dataframe
+df_LigaInsider = pd.DataFrame(data=all_rows[1:,:],columns=headings)
+
+
+#%%
+
+ret = Ligainsider()

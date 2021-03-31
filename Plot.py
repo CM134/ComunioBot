@@ -91,7 +91,7 @@ attributeNames = np.asarray(df_all.columns)
 
 #%% Define Players 
 
-PlayerNames = ['Thuram','Kramer','Stindl','Musiala']
+PlayerNames = ['sigh']
 
 
 #%% Market Value
